@@ -9,10 +9,10 @@ defmodule Jqish.Mixfile do
       package: package(),
       description: description(),
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      deps: deps(),
+      compilers: [:leex, :yecc] ++ Mix.compilers()
     ]
   end
-
 
   defp description do
     """
