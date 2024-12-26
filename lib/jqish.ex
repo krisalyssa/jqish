@@ -34,7 +34,7 @@ defmodule Jqish do
       case :jqish_parser.parse(tokens) do
         {:ok, _} = ok ->
           ok
-        {:error, {_, :jqish_parser, ['syntax error before: ', before]}} ->
+        {:error, {_, :jqish_parser, [~c(syntax error before: ), before]}} ->
           {:error, %SyntaxError{before: :erlang.list_to_binary(before)}}
       end
     end
